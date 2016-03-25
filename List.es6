@@ -24,7 +24,8 @@ let MakeList = ({keyboardEvents=true}={}) => {
 				selected: [],
 				disabled: [],
 				multiple: false,
-				onChange: () => {}
+				onChange: () => {},
+				keyboardEvents: keyboardEvents,
 			}
 		},
 
@@ -203,7 +204,7 @@ let MakeList = ({keyboardEvents=true}={}) => {
 
 			return <ul className={cx('react-list-select', this.props.className)}
 				tabIndex={0}
-				onKeyDown={keyboardEvents && this.onKeyDown}>
+				onKeyDown={this.props.keyboardEvents && this.onKeyDown}>
 				{items}
 			</ul>
 		}

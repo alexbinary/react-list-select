@@ -59,11 +59,22 @@ var example4 = <List items={comps} disabled={[2]} selected={[0]} onChange={conso
 	EXAMPLE 5
 */
 
+var example5 = <List
+	items={comps}
+	disabled={[2]}
+	selected={[0]}
+	keyboardEvents={false}
+	onChange={console.log.bind(console)} />
+
 var CustomList = MakeList({
 	keyboardEvents: false,
 });
 
-var example5 = <CustomList items={comps} disabled={[2]} selected={[0]} onChange={console.log.bind(console)} />
+var example5builder = <CustomList
+	items={comps}
+	disabled={[2]}
+	selected={[0]}
+	onChange={console.log.bind(console)} />
 
 
 var Demo = React.createClass({
@@ -73,6 +84,7 @@ var Demo = React.createClass({
 			<div className='context-menu'>{example3}</div>
 			<div>{example4}</div>
 			<div>{example5}</div>
+			<div>{example5builder}</div>
 		</div>
 	}
 })
